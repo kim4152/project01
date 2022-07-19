@@ -76,7 +76,7 @@ ul li{
 
 <body>
 	
-	<a href="<c:url value='/'/>"><h1 class="title">오늘 뭐 먹지</h1></a>
+	<h1 class="title" ><a href="https://ndproj1.netlify.app/" ">오늘 뭐 먹지</a></h1>
 	<hr style="margin:0;">
 	
 	<table width="100%" style="text-align:center; border:none; margin: auto;width: 1000px; font-size:20px">	
