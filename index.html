@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<!-- saved from url=(0022)http://localhost:8010/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>오늘 뭐 먹지</title>
+<style type="text/css">
+	/*로그인 버튼*/
+	.loginbutton{
+		width:205px;
+	}
+	.groove {border-style: groove; color:blue; border:10} /*테두리 설정 */
+</style>
+</head>
+<body>
+	
+	
+	
+	
+
+ 
+
+
+
+
+
+
+<!-- ######  드롭박스 설정 #########-->
+<link rel="stylesheet" href="./index_files/bootstrap.min.css">
+<script src="./index_files/jquery.slim.min.js.다운로드"></script>
+<script src="./index_files/popper.min.js.다운로드"></script>
+<script src="./index_files/bootstrap.bundle.min.js.다운로드"></script>
+<!-- 드롭박스  끝 -->
+
+<script src="./index_files/jquery-3.4.1.js.다운로드"></script>
+
+
+<script type="text/javascript">
+	function but(){
+		
+	}
+</script>
+<style type="text/css">
+ul li a {
+	text-decoration: none; /* <a>밑줄 없애줌*/
+	text-decoration-line: none;
+	color:#2C3E50;
+	font-weight: 600;
+}
+
+a{
+	text-decoration: none; /* <a>밑줄 없애줌*/
+	text-decoration-line: none;
+	color:#566573;
+}
+
+a:hover {
+	color:#566573 ;	/* 마우스 갖다대면 색 바꿈*/
+	text-decoration-line: none;
+}
+a:hover{
+text-decoration: none; /* <a>밑줄 없애줌*/
+border-bottom: none;
+}
+ul {
+	list-style: none; 	/* <li>테그의 . 을 빼줌*/
+	display: flex;		/* <li> 태그를 가로로 배치*/
+	justify-content: flex-end;	/* <li> 태그를 끝으로 배치*/
+	margin:7px;
+}
+ul li{
+	margin: 0 10px;	/* <li>끼리 간격*/
+	padding: 0;	/* <li> 높낮이 설정*/
+}
+.title{
+	text-align:center;
+	margin-top:40px;
+	margin-bottom:40px;
+	color:#277A17;font-weight: 900;
+	
+}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+
+</style>
+
+
+
+
+
+
+	
+	<a href="http://localhost:8010/"><h1 class="title">오늘 뭐 먹지</h1></a>
+	<hr style="margin:0;">
+	
+	<table width="100%" style="text-align:center; border:none; margin: auto;width: 1000px; font-size:20px">	
+		<tbody><tr>
+			<td colspan="2" style="background-color:white ; width:100%; height:3px">
+				<ul>
+					<li>
+						<a href="http://localhost:8010/meal/mealMain">식사</a>
+					</li>
+					<li>
+						<a href="http://localhost:8010/nudel/nudelMain">라면</a>
+					</li>
+					<li>
+						<a href="http://localhost:8010/list/list">리스트만들기</a>
+					</li>
+					<li>
+						<a href="http://localhost:8010/board/main">게시판</a>
+					</li>
+				</ul>
+			</td>
+		</tr>
+	</tbody></table>
+	
+	<hr style="margin:0;">
+	
+	
+	
+	
+	
+
+
+
+
+
+
+	<form action="http://localhost:8010/member/login" method="post">
+	<table width="100%" style=" border:none; margin: auto;width: 1000px;">	
+		<tbody><tr>			
+			<td style="height:700px;">
+				
+				<div style="text-align:right; column-span:all; height: 100%; width: 210px;  right: 100%; margin-left: 78%;">
+				
+				<p style=" margin-bottom: 5px; margin-top: 10px;">
+					<input id="id" placeholder="아이디" style="height:40px;" size="21" tabindex="1" maxlength="15">
+				</p>
+				
+				<p style=" margin-bottom: 5px; margin-top: 10px;">
+					
+				</p>
+				
+				<p>
+					<input type="password" id="password" placeholder="비밀번호" style="height:40px;" size="21" maxlength="15" tabindex="2" onkeyup="enter()">
+				</p>
+				<span>
+					<input type="button" value="로그인" class="loginbutton" tabindex="3" onclick="sub()">
+				</span>
+				<span>
+					<input type="checkbox" value="autoLogin" name="autoLogin" id="autoLogin"><label for="autoLogin" tabindex="4">자동 로그인</label>
+					<input type="checkbox" value="keepId" name="keepId" id="keepId"><label for="keepId" tabindex="5">아이디 저장</label>
+				</span>
+				<p>
+					<a href="http://localhost:8010/member/find">비밀번호 찾기</a> &nbsp; | &nbsp; <a href="http://localhost:8010/member/join">회원가입</a> &nbsp;
+				</p>
+				<span>
+					<img alt="a" src="./index_files/kakaoLogin.png" style="width: 205px" onclick="kakaoLogin()">
+				</span>
+	
+				</div>
+				
+				
+				
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" style="background-color:#FFCC00">
+				<h2>FOOTER </h2>
+			</td>
+		</tr>
+	
+	</tbody></table>
+	</form>
+	
+	<script src="./index_files/kakao.js.다운로드"></script>
+	
+	
+	<script type="text/javascript">
+	window.onload=function(){
+		$("#id").focus();
+	}
+	
+	/*로그인 실패 코드*/
+	function sub(){
+		var id=$("#id").val(); 
+		var password=$("#password").val();
+		var autoLogin="";
+		var keepId="";
+		let form={id:id,password:password};
+		$('input:checkbox[name=autoLogin]').each(function (index) {
+			if($(this).is(":checked")==true)
+		    	autoLogin=$(this).val();						    
+		});
+		$('input:checkbox[name=keepId]').each(function (index) {
+			if($(this).is(":checked")==true)
+		    	keepId=$(this).val();						    
+		});
+			$.ajax({
+				url:'member/login',type:'POST',data:JSON.stringify(form),dataType:'text',
+				contentType:'application/json;charset=utf8',success:function(data){
+					if(data=="success"){
+						console.log("suc");
+						loginSec(id,autoLogin,keepId); return;
+					}
+					alert(data);
+				},error:function(){
+					console.log("error");
+					alert("error")
+				}
+			})
+
+	}
+	function loginSec(id,autoLogin,keepId){
+		let form={id:id,autoLogin:autoLogin,keepId:keepId}
+		console.log(form)
+		$.ajax({
+			url:'member/loginSuccess', type:'POST', data:JSON.stringify(form),
+			contentType:'application/json;charset=utf8',dataType:'text',success:function(data){
+				console.log(data);
+				location.href="/"
+			}
+		})
+		
+	}
+	/*엔터키 이벤트*/
+	function enter(){
+		if (window.event.keyCode == 13) {
+	    	sub();
+	    }
+	}
+		
+	
+	/*카톡 로그인 시작*/
+	Kakao.init("46b14e20ee81b576aef4c3fefeff66be");
+		
+	function kakaoLogin(){
+		var id=""; var name ="";
+		Kakao.Auth.loginForm({			
+			success:function(authObj){
+				Kakao.API.request({
+					url:'/v2/user/me',
+					success: function(res){
+						 id = res.id;
+						 name = res.properties.nickname;
+						 let form={id:id,name:name};
+						 kakaoLoginController(res)
+					}
+				})
+				var token = authObj.access_token;
+			},
+			fail:function(err){
+				alert(JSON.stringify(err));
+			}					
+		})
+		
+		}
+	function kakaoLoginController(res){
+		let form={id:res.id,name:res.properties.nickname};
+		$.ajax({
+			url:'member/hi', type:'GET',data:form,dataType:'text',
+			success:function(data){
+				console.log("kls");
+				location.href="/com/member/kLoginSuccess?id="+data;
+			},error:function(){
+				alert("error")
+			}
+		});
+		
+	}
+	/*카톡 로그인 끝*/
+	
+	/*로그아웃*/
+	function logOut(id){
+		$.ajax({
+			url:'/member/logOut',data:JSON.stringify(id), type:'POST',
+			contentType:'application/json; charset=utf8',success:function(){
+				console.log("suc")
+				location.href="/";
+			}
+		})
+	}
+	</script>
+		
+
+</body></html>
